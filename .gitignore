@@ -1,0 +1,10 @@
+# Add these contents to .gitignore
+node_modules/
+__pycache__/
+.env
+.env.local
+.next/
+dist/
+.DS_Store
+venv/
+*.pyc
