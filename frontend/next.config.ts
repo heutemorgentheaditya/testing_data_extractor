@@ -1,7 +1,22 @@
-import type { NextConfig } from "next";
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  reactStrictMode: true,
+  async redirects() {
+    return [
+      {
+        source: '/dashboard',
+        has: [
+          {
+            type: 'cookie',
+            key: 'token',
+            missing: true,
+          },
+        ],
+        permanent: false,
+        destination: '/',
+      },
+    ];
+  },
+}
 
-const nextConfig: NextConfig = {
-  /* config options here */
-};
-
-export default nextConfig;
+module.exports = nextConfig
